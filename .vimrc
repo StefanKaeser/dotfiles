@@ -43,6 +43,8 @@ set incsearch               " Incrementally search while typing a /regex
 " Remaps 
 " ==========================================================
 let mapleader = " "         " The leader key is now space
+nnoremap J <C-f>
+nnoremap K <C-b>
 
 " ==========================================================
 " Buffer 
@@ -76,7 +78,6 @@ nmap <leader>bl :ls<CR>
 " Get back to normal mode faster
 :inoremap jk <Esc>
 
-
 " === vim-airline=============================================================
 
 " Enable the list of buffers
@@ -99,11 +100,32 @@ let g:solarized_termtrans=1
 "let g:solarized_visibility = "low"
 colorscheme solarized
 
+" === vim-lsp=================================================================
 
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
 
-"YouCompleteMe stuff
-let g:ycm_autoclose_preview_window_after_completion=1
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd', '-background-index']},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+        \ })
+endif
 
+" === asyncomplete============================================================
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+
+" === nerdtree================================================================
 
 " Nerdtreee addon on the side
 let NERDTreeIgnore=['\.pyc$','\.out$', '\.h5', '\~$', '\.ipynb'] "ignore files in NERDTree
