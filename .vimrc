@@ -39,11 +39,35 @@ set smartcase               " unless uppercase letters are used in the regex.
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
-
 " ==========================================================
 " Remaps 
 " ==========================================================
 let mapleader = " "         " The leader key is now space
+
+" ==========================================================
+" Buffer 
+" ==========================================================
+
+" This allows buffers to be hidden if you've modified a buffer.
+" This is almost a must if you wish to use buffers in this way.
+set hidden
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
 
 " ==========================================================
 " Shortcuts
@@ -53,23 +77,39 @@ let mapleader = " "         " The leader key is now space
 :inoremap jk <Esc>
 
 
-"YouCompleteMe stuff
-let g:ycm_autoclose_preview_window_after_completion=1
+" === vim-airline=============================================================
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" === vim-airline=============================================================
 
 "Enlarge one split window and go back if pushed again
 nnoremap W :ZoomWin<CR>
 
+" === vim-colors-solarized====================================================
+
 syntax enable
-"set background=dark
+set background=dark
 let g:solarized_termtrans=1
 "let g:solarized_contrast = "normal"
 "let g:solarized_visibility = "low"
 colorscheme solarized
 
+
+
+"YouCompleteMe stuff
+let g:ycm_autoclose_preview_window_after_completion=1
+
+
 " Nerdtreee addon on the side
 let NERDTreeIgnore=['\.pyc$','\.out$', '\.h5', '\~$', '\.ipynb'] "ignore files in NERDTree
 map <C-x> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 
 " Split navigations
 nnoremap <C-Down> <C-W><C-J>
