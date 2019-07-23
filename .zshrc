@@ -9,7 +9,12 @@ export ZSH="/home/kaeser/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+#POWERLEVEL9K_MODE="nerdfont-complete"
+#POWERLEVEL9K_DISABLE_RPROMPT=true
+#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+#POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="▶ "
+#POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -17,7 +22,7 @@ ZSH_THEME="robbyrussell"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -97,3 +102,37 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Use scipts in ~/bin folder
+export PATH=$PATH:~/bin
+
+export PATH=$PATH:/usr/local/include
+
+# Enviroments for TRIQS
+export CC=clang
+export CXX=clang++
+export LIBCLANG_LOCATION=/usr/lib/llvm-6.0/lib/libclang.so
+export LIBCLANG_CXX_FLAGS="-I/usr/include/x86_64-linux-gnu/c++/7"
+#export PYTHONPATH=~/cpp2py/lib/python2.7/site-packages:$PYTHONPATH
+#source ~/cpp2py/share/cpp2pyvars.sh
+#source ~/TRIQS/share/triqsvars.sh
+
+# Load MPI and hdf5 in the local enviroment
+export CPLUS_INCLUDE_PATH=/usr/include/openmpi:/usr/include/hdf5/serial/:$CPLUS_INCLUDE_PATH
+
+# added by Anaconda3 2018.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/kaeser/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/home/kaeser/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/kaeser/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/home/kaeser/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
