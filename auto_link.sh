@@ -3,6 +3,7 @@
 filenames=(
     .vim/
     .vimrc
+    .tmux.conf
 )
 
 for filename in "${filenames[@]}"; do
