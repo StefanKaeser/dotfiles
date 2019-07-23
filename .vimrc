@@ -132,6 +132,8 @@ let NERDTreeIgnore=['\.pyc$','\.out$', '\.h5', '\~$', '\.ipynb'] "ignore files i
 map <C-x> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Make Tmux understand vim
+set term=xterm-256color
 
 " Split navigations
 nnoremap <C-Down> <C-W><C-J>
