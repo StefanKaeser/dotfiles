@@ -29,7 +29,7 @@ set modeline                " Allow vim options to be embedded in files;
 set modelines=5             " they must be within the first or last 5 lines.
 "
 """" Messages, Info, Status
-set vb t_vb=                " Disable all bells.  I hate ringing/flashing.
+set belloff=all             " No ringing or flashing
 set confirm                 " Y-N-C prompt if closing with unsaved changes.
 set report=0                " : commands always print changed line count.
 
