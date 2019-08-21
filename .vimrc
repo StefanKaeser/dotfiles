@@ -22,6 +22,7 @@ set nostartofline           " Avoid moving cursor to BOL when jumping around
 set nowrap                  " don't wrap text
 set linebreak               " don't wrap textin the middle of a word
 set tabstop=4               " <tab> inserts 4 spaces 
+set bs=2                    " Allows to use the backspace character
 
 """" Reading/Writing
 set noswapfile
