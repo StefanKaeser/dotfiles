@@ -44,8 +44,10 @@ set incsearch               " Incrementally search while typing a /regex
 " Remaps 
 " ==========================================================
 let mapleader = " "         " The leader key is now space
-nnoremap J <C-f>
-nnoremap K <C-b>
+
+" Move down/up half a screen
+nnoremap J <C-D>
+nnoremap K <C-U>
 
 " ==========================================================
 " Buffer 
