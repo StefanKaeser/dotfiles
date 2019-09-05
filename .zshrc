@@ -102,14 +102,14 @@ export PATH=$PATH:~/bin
 
 export PATH=$PATH:/usr/local/include
 
+# Use enviromental modules
+source ~/../../usr/local/Modules/init/zsh
+
 # Enviroments for TRIQS
 export CC=clang
 export CXX=clang++
 export LIBCLANG_LOCATION=/usr/lib/llvm-6.0/lib/libclang.so
 export LIBCLANG_CXX_FLAGS="-I/usr/include/x86_64-linux-gnu/c++/7"
-#export PYTHONPATH=~/cpp2py/lib/python2.7/site-packages:$PYTHONPATH
-#source ~/cpp2py/share/cpp2pyvars.sh
-#source ~/TRIQS/share/triqsvars.sh
 
 # Load MPI and hdf5 in the local enviroment
 export CPLUS_INCLUDE_PATH=/usr/include/openmpi:/usr/include/hdf5/serial/:$CPLUS_INCLUDE_PATH
@@ -130,3 +130,6 @@ else
 fi
 unset __conda_setup
 # <<< conda init <<<
+
+# added by Anaconda3 installer
+export PATH="/home/kaeser/anaconda3/bin:$PATH"
