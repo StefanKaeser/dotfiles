@@ -122,6 +122,14 @@ if executable('clangd')
         \ })
 endif
 
+if executable('texlab')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'texlab',   
+        \ 'cmd': {server_info->['texlab']},
+        \ 'whitelist': ['bib','tex'],
+        \ })
+endif
+
 " === asyncomplete============================================================
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
