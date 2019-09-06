@@ -136,6 +136,11 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 
+" === vim-latex-live-revie====================================================
+
+let g:livepreview_previewer = 'evince'
+autocmd Filetype tex setl updatetime=100
+
 " === nerdtree================================================================
 
 " Nerdtreee addon on the side
