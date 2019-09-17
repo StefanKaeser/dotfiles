@@ -139,7 +139,7 @@ inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 " === vim-latex-live-revie====================================================
 
 let g:livepreview_previewer = 'evince'
-autocmd Filetype tex setl updatetime=100
+autocmd Filetype tex setl updatetime=500
 
 " === nerdtree================================================================
 
@@ -177,11 +177,6 @@ inoremap ww <Esc>
 " move to beginning/end of line
 nnoremap B ^
 nnoremap E $
-
-" " $/^/w doesn't do anything
-nnoremap $ <nop>
-nnoremap ^ <nop>
-nnoremap w <nop>
 
 "use UTF-8
 set encoding=utf-8
