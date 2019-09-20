@@ -91,10 +91,10 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-" === vim-airline=============================================================
+" === vim-zoomwin=============================================================
 
 "Enlarge one split window and go back if pushed again
-nnoremap W :ZoomWin<CR>
+"nnoremap W :ZoomWin<CR>
 
 " === vim-colors-solarized====================================================
 
