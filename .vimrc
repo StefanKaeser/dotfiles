@@ -39,6 +39,8 @@ set ignorecase              " Default to using case insensitive searches,
 set smartcase               " unless uppercase letters are used in the regex.
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
+" Remove highlight when by hitting enter again after a search
+nnoremap <CR> :noh<CR>
 
 " ==========================================================
 " Remaps 
