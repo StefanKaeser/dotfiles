@@ -173,13 +173,6 @@ set expandtab
 " Smart indenting
 set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
-"make ww do esc"
-inoremap ww <Esc>
-
-" move to beginning/end of line
-nnoremap B ^
-nnoremap E $
-
 "use UTF-8
 set encoding=utf-8
 
