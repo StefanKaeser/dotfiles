@@ -11,9 +11,9 @@ set path+=** " :find will now do recursive fuzzy file finding
 " Ignore these files when completing
 set wildignore+=*.o,*.obj,.git,*.pyc,*.aux
 
-" show a line at column 79
+" show a line at column 88
  if exists("&colorcolumn")
-    set colorcolumn=79
+    set colorcolumn=88
 endif
 
 """ Moving Around/Editing
