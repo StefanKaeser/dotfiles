@@ -171,7 +171,7 @@ set shiftwidth=4
 " tab = spaces
 set expandtab
 " Smart indenting
-set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 
 "use UTF-8
 set encoding=utf-8
